@@ -1,6 +1,6 @@
 {
     "name": "react-popover-hook",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Ultra lightweight React hook for popovers, dropdowns, etc...",
     "main": "dist/index.js",
     "repository": "https://github.com/jakech/react-popover-hook.git",
