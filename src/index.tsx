@@ -78,11 +78,9 @@ interface ContentProps<C> {
     ref: Ref<C>
 }
 
-const usePopover = <T extends HTMLElement, C extends HTMLElement>(): [
-    boolean,
-    TriggerProps<T>,
-    ContentProps<C>
-] => {
+const usePopover = <T extends HTMLElement, C extends HTMLElement>(
+    defaultOpen = false
+): [boolean, TriggerProps<T>, ContentProps<C>] => {
     const triggerRef = useRef<T>(null)
     const [position, setPosition] = useState<CSSProperties>({
         top: 'auto',
@@ -100,7 +98,7 @@ const usePopover = <T extends HTMLElement, C extends HTMLElement>(): [
         }
     }, [])
 
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(defaultOpen)
     const toggle = useCallback(() => setOpen(!open), [])
     const close = useCallback(() => setOpen(false), [])
 
