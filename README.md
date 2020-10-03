@@ -3,18 +3,15 @@
 # react-popover-hook
 
 -   No extraneous DOM, gives you complete style control
--   Ultra lightweight 1.45 kB (gzip)
--   Good a11y supports
+-   Ultra lightweight [~ 1 kB (gzip)](https://bundlephobia.com/result?p=react-popover-hook)
+-   Good a11y support
 -   TypeScript
 
 ## Usage
 
-```tsx
+```jsx
 const App = () => {
-    const [open, trigger, content] = usePopover<
-        HTMLButtonElement,
-        HTMLDivElement
-    >()
+    const [open, trigger, content] = usePopover(false)
     return (
         <div>
             <button {...trigger}>Trigger</button>
@@ -24,7 +21,7 @@ const App = () => {
 }
 ```
 
-## `usePopover(defaultOpen?: boolean)`
+## API
 
 ```js
 const [open, trigger, content] = usePopover(false)
@@ -44,30 +41,33 @@ For demo purpose we will name and refer to these items as `open`, `trigger` and 
 
 An object containing the props for the trigger Component. it can be directly spreaded on the Component being used as trigger of the popover.
 
-```tsx
-<button {...trigger}></button>
+```jsx
+<button {...trigger}>Click to open</button>
 ```
 
-### `trigger.ref`
+| key             | type        | desc                                                           |
+| --------------- | ----------- | -------------------------------------------------------------- |
+| `ref`           | `React.Ref` | **! important !** attached this `ref` to the trigger component |
+| `onClick`       | `function`  | toggle the popover open/close state.                           |
+| `aria-haspopup` | `string`    | value set to `dialog`                                          |
+| `aria-expanded` | `boolean`   | reflect the open and close state of popover                    |
 
-### `trigger.onClick()`
-
-Toggle the popover open/close state.
-
-### `trigger['aria-haspopup']`
-
-### `trigger['aria-expanded']`
+**! important !** popover content position will be calculated by using the trigger position.
 
 ## `content`
 
 An object containing the props for the Component that contains the popover's content. it can be directly spreaded on the Component that contains the popover's content.
 
-```tsx
-<div {...content}></div>
+```jsx
+<div {...content}>
+    <p>Whatever content</p>
+</div>
 ```
 
-### `content.ref`
+| key     | type            | desc                                                           |
+| ------- | --------------- | -------------------------------------------------------------- |
+| `ref`   | `React.Ref`     | **! important !** attached this `ref` to the content component |
+| `role`  | `string`        | value set to `dialog`                                          |
+| `style` | `CSSProperties` | style object                                                   |
 
-### `content.role`
-
-### `content.style`
+**! important !** popover content position will be calculated by using the trigger position.
