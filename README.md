@@ -1,3 +1,5 @@
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-popover-hook)
+
 # react-popover-hook
 
 -   No extraneous DOM, gives you complete style control

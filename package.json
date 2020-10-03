@@ -5,6 +5,12 @@
     "repository": "https://github.com/jakech/react-popover-hook.git",
     "author": "Jake <jake83@gmail.com>",
     "license": "MIT",
+    "keywords": [
+        "react",
+        "hooks",
+        "popover",
+        "dropdown"
+    ],
     "files": [
         "dist"
     ],
