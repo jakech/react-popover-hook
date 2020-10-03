@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2'
+import bundleSize from 'rollup-plugin-bundle-size'
 import pkg from './package.json'
 
 export default {
@@ -12,6 +13,6 @@ export default {
             strict: false,
         },
     ],
-    plugins: [typescript()],
+    plugins: [typescript(), bundleSize()],
     external: ['react', 'react-dom'],
 }
