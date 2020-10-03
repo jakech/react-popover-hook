@@ -1,6 +1,6 @@
 {
     "name": "react-popover-hook",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "dist/index.js",
     "repository": "https://github.com/jakech/react-popover-hook.git",
     "author": "Jake <jake83@gmail.com>",
